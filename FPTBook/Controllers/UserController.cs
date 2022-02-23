@@ -104,6 +104,7 @@ namespace FPTBook.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult EditInfor(User obj)
         {

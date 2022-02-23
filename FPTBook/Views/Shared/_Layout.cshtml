@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - FPTBook.com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
     <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
@@ -24,7 +24,7 @@
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="margin: -15px;margin-left: 0px;padding: 10px 0px;">
         <div class="container">
-            <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button><a class="navbar-brand" href="#page-top" style="background: var(--bs-gray-800);color: var(--bs-orange);font-size: 52px;margin-right: 18px;margin-top: 0px;margin-left: -30px;">FPTBook</a><!-- Start: OmEleSearchSimple -->
+            <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button><a class="navbar-brand" href="#page-top" style="background: none;color: var(--bs-orange);font-size: 52px;margin-right: 18px;margin-top: 0px;margin-left: -30px;">FPTBook</a><!-- Start: OmEleSearchSimple -->
             <div class="row padMar">
                 <div class="col padMar">
                     <div class="input-group"></div>
@@ -51,26 +51,19 @@
                     <li class="nav-item"><a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</li>
                     <li class="nav-item"><a class="nav-link" @Html.ActionLink("About", "About", "Home")</li>
                     <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li class="nav-item" style="padding: 0px;margin-left: -14px;margin-right: 0px;">
-                        <a class="nav-link" style="padding: 27.83px 15.3px;margin-left: 5px;" @Html.ActionLink($"Hi!{Session["UserName"]}", "EditInfor","User")
-                    </li>
-                    <li class="nav-item" style="padding: 0px;margin-left: -14px;margin-right: 0px;">
-                        <a class="nav-link" href="@Url.Action("Logout","User")"style="padding: 27.83px 15.3px;margin-left: 5px;">Log out</a> 
-                    </li>
-                    
+                    <li class="nav-item"><a class="nav-link" @Html.ActionLink($"Hi!{Session["UserName"]}", "EditInfor", "User")</li>
+                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","User")">LOG OUT</a></li>
                 </ul>
                 }
                 else
                 {
-                    <ul class="navbar-nav ms-auto text-uppercase">
-                        <li class="nav-item"><a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</li>
-                        <li class="nav-item"><a class="nav-link" @Html.ActionLink("About", "About", "Home")</li>
-                        <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li class="nav-item" style="padding: 0px;margin-left: -14px;margin-right: -20px;">
-                            <a class="nav-link" style="padding: 27.83px 15.3px;margin-left: 24px;"@Html.ActionLink("SIGN IN", "Login", "User")
-                        </li>
-                        <li class="nav-item"><a class="nav-link" style="padding: 12.829999999999998px 15.3px;"@Html.ActionLink("SIGN UP", "Register", "User")
-                    </ul>
+            <ul class="navbar-nav ms-auto text-uppercase">
+                <li class="nav-item"><a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="nav-item"><a class="nav-link" @Html.ActionLink("About", "About", "Home")</li>
+                <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="nav-item"><a class="nav-link" @Html.ActionLink("SIGN IN", "Login", "User")</li>
+                <li class="nav-item"><a class="nav-link" @Html.ActionLink("SIGN UP", "Register", "User")</li>
+            </ul>
                 }
             </div>
         </div>

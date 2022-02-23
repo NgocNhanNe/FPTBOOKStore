@@ -1,0 +1,43 @@
+﻿@model FPTBook.Models.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<body>
+    <!-- Start: Login Form Clean -->
+    <section class="login-clean">
+        @using (Html.BeginForm("Login", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <p>@ViewBag.ErrorMessage</p>
+            <form method="post" style="font-size: 26px;width: 337px;">
+                <h2 align="center">Login</h2>
+                <div class="illustration"><i class="icon ion-android-lock" style="color: var(--bs-orange);"></i></div>
+                <div class="mb-3">
+                    <span></span>
+                    <span style="font-size: 21px;color: var(--bs-gray-900);font-weight: bold;">Username</span>
+                    @Html.TextBoxFor(m => m.UserName, "", new { @class = "form-control", @placeholder = "Username", @style = "width: 256px;" })
+
+                </div>
+                <div class="mb-3">
+                    <span></span>
+                    <span style="font-size: 21px;color: var(--bs-gray-900);font-weight: bold;">Password</span>
+                    @Html.TextBoxFor(m => m.Password, "", new { @class = "form-control", @placeholder = "Password", @type = "password", @style = "width: 256px;" })
+                </div>
+                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="color: var(--bs-body-bg);background: var(--bs-orange);">Log In</button></div>
+                <a class="forgot" href="@Url.Action("Home")" style="color: var(--bs-gray-900);font-size: 17px;">Back Home Page</a>
+            </form>
+        }
+    </section><!-- End: Login Form Clean -->
+    <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/agency.js"></script>
+</body>
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

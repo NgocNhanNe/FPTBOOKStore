@@ -1,131 +1,139 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<header class="masthead" style="padding: -30px;margin: -115px;">
-    <img src="~/assets/header.jpg" width="1550" height="800" />
-</header>   
-<br />
-<br />
-<br />
-<br />
-<section class="bg-light" id="portfolio" style="padding: 29px 0px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="text-uppercase section-heading">Portfolio</h2>
-                <h3 class="text-muted section-subheading">Lorem ipsum dolor sit amet consectetur.</h3>
+<!DOCTYPE html>
+<html>
+<body>
+    <header class="masthead" style="padding: -30px;margin: -115px;">
+        <img src="~/assets/header.jpg" width="1550" height="800" />
+    </header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <section class="bg-light" id="portfolio" style="padding: 29px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">Portfolio</h2>
+                    <h3 class="text-muted section-subheading">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="~/assets/img/portfolio/1-thumbnail.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Threads</h4>
+                        <p class="text-muted">Illustration</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" href="#portfolioModal2" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="~/assets/img/portfolio/2-thumbnail.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Explore</h4>
+                        <p class="text-muted">Graphic Design</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" href="#portfolioModal3" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="~/assets/img/portfolio/3-thumbnail.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Finish</h4>
+                        <p class="text-muted">Identity</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" href="#portfolioModal4" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="~/assets/img/portfolio/4-thumbnail.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Lines</h4>
+                        <p class="text-muted">Branding</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" href="#portfolioModal5" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="~/assets/img/portfolio/5-thumbnail.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Southwest</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" href="#portfolioModal6" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div><img class="img-fluid" src="~/assets/img/portfolio/6-thumbnail.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Window</h4>
+                        <p class="text-muted">Photography</p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Start: ml cinel cursos heading -->
+        <h1 class="display-3 text-uppercase text-center text-primary" style="padding-top: 10px;padding-bottom: 10px;">CINEL CURSOS</h1><!-- End: ml cinel cursos heading -->
+    </section>
+    <section class="bg-light" id="team" style="padding: 28px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img class="rounded-circle mx-auto" src="~/assets/img/team/1.jpg">
+                        <h4>Kay Garland</h4>
+                        <p class="text-muted">Lead Designer</p>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img class="rounded-circle mx-auto" src="~/assets/img/team/2.jpg">
+                        <h4>Larry Parker</h4>
+                        <p class="text-muted">Lead Marketer</p>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img class="rounded-circle mx-auto" src="~/assets/img/team/3.jpg">
+                        <h4>Diana Pertersen</h4>
+                        <p class="text-muted">Lead Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-4 portfolio-item">
-                <a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div><img class="img-fluid" src="~/assets/img/portfolio/1-thumbnail.jpg">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Threads</h4>
-                    <p class="text-muted">Illustration</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 portfolio-item">
-                <a class="portfolio-link" href="#portfolioModal2" data-bs-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div><img class="img-fluid" src="~/assets/img/portfolio/2-thumbnail.jpg">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Explore</h4>
-                    <p class="text-muted">Graphic Design</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 portfolio-item">
-                <a class="portfolio-link" href="#portfolioModal3" data-bs-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div><img class="img-fluid" src="~/assets/img/portfolio/3-thumbnail.jpg">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Finish</h4>
-                    <p class="text-muted">Identity</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 portfolio-item">
-                <a class="portfolio-link" href="#portfolioModal4" data-bs-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div><img class="img-fluid" src="~/assets/img/portfolio/4-thumbnail.jpg">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Lines</h4>
-                    <p class="text-muted">Branding</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 portfolio-item">
-                <a class="portfolio-link" href="#portfolioModal5" data-bs-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div><img class="img-fluid" src="~/assets/img/portfolio/5-thumbnail.jpg">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Southwest</h4>
-                    <p class="text-muted">Website Design</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 portfolio-item">
-                <a class="portfolio-link" href="#portfolioModal6" data-bs-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                    </div><img class="img-fluid" src="~/assets/img/portfolio/6-thumbnail.jpg">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Window</h4>
-                    <p class="text-muted">Photography</p>
-                </div>
-            </div>
-        </div>
-    </div><!-- Start: ml cinel cursos heading -->
-    <h1 class="display-3 text-uppercase text-center text-primary" style="padding-top: 10px;padding-bottom: 10px;">CINEL CURSOS</h1><!-- End: ml cinel cursos heading -->
-</section>
-<section class="bg-light" id="team" style="padding: 28px 0px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="rounded-circle mx-auto" src="~/assets/img/team/1.jpg">
-                    <h4>Kay Garland</h4>
-                    <p class="text-muted">Lead Designer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="rounded-circle mx-auto" src="~/assets/img/team/2.jpg">
-                    <h4>Larry Parker</h4>
-                    <p class="text-muted">Lead Marketer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="rounded-circle mx-auto" src="~/assets/img/team/3.jpg">
-                    <h4>Diana Pertersen</h4>
-                    <p class="text-muted">Lead Developer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- Start: Bold BS4 Footer Big Logo -->
+    </section>
+    <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/agency.js"></script>
+</body>
+
+</html>
