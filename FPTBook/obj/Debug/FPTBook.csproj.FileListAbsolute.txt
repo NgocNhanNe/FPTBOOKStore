@@ -82,4 +82,3 @@ D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.xml
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.SqlServer.xml
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.Migrations.FirstRun.resources
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.csproj.GenerateResource.cache
-D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.csproj.AssemblyReference.cache
