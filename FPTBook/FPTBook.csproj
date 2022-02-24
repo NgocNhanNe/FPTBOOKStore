@@ -127,8 +127,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageUserController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DB\MyApplicationDbContext.cs" />
     <Compile Include="fonts\User.cs" />
@@ -294,8 +296,21 @@
     <Content Include="Views\Shared\LayoutAdmin.cshtml" />
     <Content Include="Views\User\EditInfor.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Category\Index.cshtml" />
-    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\ManageUser\Create.cshtml" />
+    <Content Include="Views\ManageUser\Delete.cshtml" />
+    <Content Include="Views\ManageUser\Details.cshtml" />
+    <Content Include="Views\ManageUser\Edit.cshtml" />
+    <Content Include="Views\ManageUser\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
