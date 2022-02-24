@@ -21,21 +21,6 @@ namespace FPTBook.Controllers
             return View(db.Users.ToList());
         }
 
-        // GET: ManageUser/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
         // GET: ManageUser/Create
         public ActionResult Create()
         {

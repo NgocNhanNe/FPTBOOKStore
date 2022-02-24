@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Details Book</h2>
 
 <div>
-    <h4>Book</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -53,7 +52,6 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Book_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="mb-3"><a class="btn btn-primary d-block w-25" href="@Url.Action("Edit","Books",new { id = Model.Book_ID })" style="color: var(--bs-gray-800); background: var(--bs-orange); ">Edit</a></div>
+<div class="mb-3"><a class="btn btn-primary d-block w-25" href="@Url.Action("Index","Books")" style="color: var(--bs-orange); background: var(--bs-gray-800); ">Back to List</a></div>
+

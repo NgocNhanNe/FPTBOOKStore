@@ -307,7 +307,6 @@
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\ManageUser\Create.cshtml" />
     <Content Include="Views\ManageUser\Delete.cshtml" />
-    <Content Include="Views\ManageUser\Details.cshtml" />
     <Content Include="Views\ManageUser\Edit.cshtml" />
     <Content Include="Views\ManageUser\Index.cshtml" />
   </ItemGroup>
