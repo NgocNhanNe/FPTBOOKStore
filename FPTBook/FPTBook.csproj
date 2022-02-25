@@ -174,9 +174,11 @@
     <Content Include="assets\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\bootstrap\js\bootstrap.min.js" />
     <Content Include="assets\css\Article-Dual-Column.css" />
+    <Content Include="assets\css\beach.jpg" />
     <Content Include="assets\css\Bold-BS4-Footer-Big-Logo.css" />
     <Content Include="assets\css\Bootstrap-4-Custom-Radio.css" />
     <Content Include="assets\css\Contact-Form-Clean.css" />
+    <Content Include="assets\css\dropdown.css" />
     <Content Include="assets\css\Login-Form-Clean.css" />
     <Content Include="assets\css\Login-Form-Dark.css" />
     <Content Include="assets\css\Ludens-Users---2-Simple-Registration-Section.css" />
