@@ -85,9 +85,7 @@ namespace FPTBook.Controllers
                 }
                 else
                 {
-                    //ViewBag.Error = "User name and Password wrong";
                     ViewBag.ErrorMessage = "User name and Password wrong";
-                    //return RedirectToAction("Login");
                 }
             }
             return View();
