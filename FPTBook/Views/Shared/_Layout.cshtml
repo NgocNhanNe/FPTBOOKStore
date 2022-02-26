@@ -35,22 +35,28 @@
                 <!-- Start: Search Input Responsive with Icon -->
                 @using (Html.BeginForm())
                 {
-                    <input type="search" placeholder=" Search for key word" style="width: 400px; margin-left:50px" />
-                    <button type="submit" class="btn" style="background-color:darkorange; height:33px" value="Search">Search</button>
-                     @Html.TextBox("searchstring", "", new { @class = "form-control", type = "text" })
-                     <button type="submit" class="btn" style="background-color:darkorange; height:33px" value="Search">Search</button>
+                    <div class="row">
+                        <div class="col col-sm-7">
+                            @Html.TextBox("searchstring", "", new { @class = "form-control", @type = "text", @placeholder = " Search for key word", @style = "width: 400px; margin-right:155px" })
+                        </div>
+                        <div class="col col-sm-5">
+                            <button type="submit" class="btn" style="background-color:darkorange; height:36px" value="Search">Search</button>
+                        </div>
+                    </div>
+                     
+                     
                  }
                 <div class="collapse navbar-collapse" id="navbarResponsive" style="margin: 4px;margin-left: -42px;font-size: 17px;padding: -20px;margin-bottom: 0px;margin-right: -112px;">
                     @if (Session["UserName"] != null)
                     {
-                        <ul class="navbar-nav ms-auto text-uppercase">
-                            <li class="nav-item"><a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</li>
-                            <li class="nav-item"><a class="nav-link" @Html.ActionLink("About", "About", "Home")</li>
-                            <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</li>
-                            <li class="nav-item"><a class="nav-link" @Html.ActionLink($"Hi!{Session["UserName"]}", "EditInfor", "User")</li>
-                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","User")">LOG OUT</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
-                        </ul>
+                    <ul class="navbar-nav ms-auto text-uppercase">
+                        <li class="nav-item"><a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="nav-item"><a class="nav-link" @Html.ActionLink("About", "About", "Home")</li>
+                        <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li class="nav-item"><a class="nav-link" @Html.ActionLink($"Hi!{Session["UserName"]}", "EditInfor", "User")</li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-opencart"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","User")">LOG OUT</a></li>
+                    </ul>
                     }
                     else
                     {
