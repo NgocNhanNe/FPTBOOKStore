@@ -13,7 +13,8 @@ namespace FPTBook.Controllers
         private MyApplicationDbContext _db = new MyApplicationDbContext();
         public ActionResult Index()
         {
-            return View();
+            var books = _db.Books.ToList();
+            return View(books);
         }
         [HttpPost]
         public ActionResult Index(string searchstring)

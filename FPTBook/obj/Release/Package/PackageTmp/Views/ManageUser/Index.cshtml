@@ -8,18 +8,12 @@
 <h2>List of Users</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <div class="mb-3"><a class="btn btn-primary" href="@Url.Action("Create")">Create New Account</a></div>
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ConfirmPassword)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FullName)
@@ -49,12 +43,6 @@
 <tr>
     <td>
         @Html.DisplayFor(modelItem => item.UserName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Password)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ConfirmPassword)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.FullName)

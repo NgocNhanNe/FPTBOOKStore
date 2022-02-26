@@ -22,6 +22,10 @@ namespace FPTBook.Models
         public int Price { get; set; }
         [StringLength(100)]
         public string Description { get; set; }
+        [DataType(DataType.Upload)]
+        [Display(Name = "Upload File")]
+        [Required(ErrorMessage = "Please choose file to upload.")]
+        public string Img { get; set; }
         public int Cat_ID { get; set; }
         public virtual Category Category { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }
