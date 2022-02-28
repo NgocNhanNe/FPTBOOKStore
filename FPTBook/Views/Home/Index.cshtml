@@ -23,20 +23,19 @@
             <div class="row">
                 @foreach (var item in Model)
                 {
-                    <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="~/assets/img/@item.Img">
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>Threads</h4>
-                            <p class="text-muted">Illustration</p>
+                        <div class="col-sm-6 col-md-4 portfolio-item">
+                            <a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                                </div><img class="img-fluid" style="width: 350px; height: 300px" src="~/assets/img/@item.Img">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>@item.BookName</h4>
+                                <p class="text-muted">$ @item.Price</p>
+                                <a class="btn btn-outline-primary " href="@Url.Action("Details","Books", new {id = item.Book_ID})" data-abc="true">View Products</a>
+                            </div>
                         </div>
-                    </div>
                 }
-
-
             </div>
         </div><!-- Start: ml cinel cursos heading -->
         <h1 class="display-3 text-uppercase text-center text-primary" style="padding-top: 10px;padding-bottom: 10px;">CINEL CURSOS</h1><!-- End: ml cinel cursos heading -->

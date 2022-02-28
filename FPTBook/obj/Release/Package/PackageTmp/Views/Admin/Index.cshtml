@@ -1,7 +1,29 @@
-﻿
+﻿@model IEnumerable<FPTBook.Models.Book>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
 }
+<h2>List of Books</h2>
+@foreach (var item in Model)
+{
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+                <div class="row p-2 bg-white border rounded">
+                    <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" style="width:150px; height:200px" src="~/assets/img/@item.Img" /></div>
+                    <div class="col-md-6 mt-1">
+                        <h5>@item.BookName</h5>
+                        <p class="text-justify text-truncate para mb-0">@item.Description<br><br></p>
+                    </div>
+                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                        <div class="d-flex flex-row align-items-center">
+                        </div>
+                        <div class="d-flex flex-column mt-4"><h2 style="text-align:center">$@item.Price</h2><button class="btn btn-primary btn-sm" type="button">Details</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+}
 

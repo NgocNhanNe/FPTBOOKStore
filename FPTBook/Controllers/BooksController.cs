@@ -100,13 +100,14 @@ namespace FPTBook.Controllers
                 file.SaveAs(path);
                 book.Img = pic.ToString();
             }
-            if (true)
+            if (ModelState.IsValid)
             {
-                db.Entry(book).State = EntityState.Modified;
+                db.Books.Add(book);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Cat_ID = new SelectList(db.Categories, "Cat_ID", "CatName", book.Cat_ID);
+
+            ViewBag.categoryID = new SelectList(db.Categories, "categoryID", "categoryName", book.Cat_ID);
             return View(book);
         }
 

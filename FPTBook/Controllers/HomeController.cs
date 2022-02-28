@@ -19,7 +19,6 @@ namespace FPTBook.Controllers
         [HttpPost]
         public ActionResult Index(string searchstring)
         {
-            Session["Admin"] = null;
             List<Book> data = new List<Book>();
             data = _db.Books.Where(x => x.BookName.Contains(searchstring)).ToList();
             if (data == null)
