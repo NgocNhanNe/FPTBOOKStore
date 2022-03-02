@@ -14,9 +14,19 @@ namespace FPTBook.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+
             var books = _db.Books.ToList();
             if (Session["UserName"] == Session["UserName"] && Session["UserAdmin"]!=null)
             {
+                var totalBook = _db.Books.Count();
+                var totalCate = _db.Categories.Count();
+                var totalUser = _db.Users.Count();
+
+                
+
+                ViewBag.TotalBook = totalBook;
+                ViewBag.TotalCate = totalCate;
+                ViewBag.TotalUser = totalUser;
                 return View(books);
             }
             return RedirectToAction("Error");
