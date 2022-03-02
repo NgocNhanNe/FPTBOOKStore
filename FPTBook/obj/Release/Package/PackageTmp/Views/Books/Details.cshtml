@@ -4,60 +4,32 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details Book</h2>
-
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.CatName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.CatName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BookName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BookName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Img)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Img)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
+<br />
+<br />
+<br />
+<br />
+<br>
+<div class="row">
+    <div class="col col-sm-4" >
+        <div class="photo">
+            <img style="width: 200px; height:250px" src="~/assets/img/@Html.DisplayFor(model=>model.Img)">
+        </div>
+    </div>
+    <div class="col col-sm-8" >
+        <div class="description">
+            <h2>
+                @Html.DisplayFor(model => model.Category.CatName) : @Html.DisplayFor(model => model.BookName)
+            </h2>
+            <h1>
+               $@Html.DisplayFor(model => model.Price)
+            </h1>
+            <p>
+                @Html.DisplayFor(model => model.Description)
+            </p>
+            <div class="mb-3"><a class="btn btn-primary d-block w-25" href="@Url.Action("Add to Cart","Cart",new { id = Model.Book_ID })" style="color: var(--bs-gray-800); background: var(--bs-orange); ">Add to Cart</a></div>
+            <div class="mb-3"><a class="btn btn-primary d-block w-25" href="@Url.Action("Index","Home")" style="color: var(--bs-orange); background: var(--bs-gray-800); ">Back to Home</a></div>
+        </div>
+    </div>
 </div>
-<div class="mb-3"><a class="btn btn-primary d-block w-25" href="@Url.Action("Edit","Books",new { id = Model.Book_ID })" style="color: var(--bs-gray-800); background: var(--bs-orange); ">Edit</a></div>
-<div class="mb-3"><a class="btn btn-primary d-block w-25" href="@Url.Action("Index","Books")" style="color: var(--bs-orange); background: var(--bs-gray-800); ">Back to List</a></div>
-
+<br />
+<br />
