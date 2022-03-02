@@ -15,13 +15,11 @@ namespace FPTBook.Controllers
         public ActionResult Index()
         {
             var books = _db.Books.ToList();
-            return View(books);
-            //if (Session["UserName"]!=null)
-            //{
-            //    return View();
-            //}
-            ////return View("Error");
-            //return RedirectToAction("Error");
+            if (Session["UserName"] == Session["UserName"] && Session["UserAdmin"]!=null)
+            {
+                return View(books);
+            }
+            return RedirectToAction("Error");
         }
         [HttpPost]
         public ActionResult Index(string searchstring)
@@ -34,9 +32,9 @@ namespace FPTBook.Controllers
             }
             return View(data);
         }
-        //public ActionResult Error()
-        //{
-        //    return View();
-        //}
+        public ActionResult Error()
+        {
+           return View();
+        }
     }
 }

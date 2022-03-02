@@ -45,9 +45,6 @@ namespace FPTBook.Controllers
             return View();
         }
 
-        // POST: Books/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Book_ID,BookName,Quantity,Img,Price,Description,Cat_ID")] Book book, HttpPostedFileBase file)
@@ -86,28 +83,37 @@ namespace FPTBook.Controllers
             return View(book);
         }
 
-        // POST: Books/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Book_ID,BookName,Quantity,Img,Price,Description,Cat_ID")] Book book, HttpPostedFileBase file)
+        public ActionResult Edit([Bind(Include = "Book_ID,BookName,Quantity,Img,Price,Description,Cat_ID")] Book book, HttpPostedFileBase file, int id)
         {
-            string pic = System.IO.Path.GetFileName(file.FileName);
+            Book rebook = db.Books.Find(id);
+            string pic = "";
             if (file != null)
             {
-                string path = Path.Combine(Server.MapPath("~/assets/img"), Path.GetFileName(file.FileName));
+                string file_name = book.Img;
+                string path1 = Server.MapPath("~/assets/img/");
+                FileInfo file1 = new FileInfo(path1 + file_name);
+                if (file1.Exists)
+                {
+                    file1.Delete();
+                }
+                pic = System.IO.Path.GetFileName(file.FileName);
+                string path = Path.Combine(Server.MapPath("~/assets/img/"), Path.GetFileName(file.FileName));
                 file.SaveAs(path);
-                book.Img = pic.ToString();
+                rebook.Img = pic.ToString();
             }
             if (ModelState.IsValid)
             {
-                db.Books.Add(book);
+                rebook.BookName = book.BookName;
+                rebook.Quantity = book.Quantity;
+                rebook.Price = book.Price;
+                rebook.Description = book.Description;
+                rebook.Cat_ID = book.Cat_ID;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.categoryID = new SelectList(db.Categories, "categoryID", "categoryName", book.Cat_ID);
+            ViewBag.Cat_ID = new SelectList(db.Categories, "Cat_ID", "CatName", book.Cat_ID);
             return View(book);
         }
 

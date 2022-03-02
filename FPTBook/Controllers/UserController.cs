@@ -79,6 +79,7 @@ namespace FPTBook.Controllers
                     }
                     else
                     {
+                        Session["UserAdmin"] = data.FirstOrDefault().UserName;
                         return RedirectToAction("Index", "Admin");
                     }
 
