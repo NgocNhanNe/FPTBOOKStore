@@ -32,7 +32,7 @@ namespace FPTBook.Controllers
             var book = _db.Books.SingleOrDefault(s => s.Book_ID == id);
             if (book != null)
             {
-                GetCart().AddtoCart(book);
+                GetCart().Add(book);
             }
             return RedirectToAction("ViewCart", "MyCarts");
         }

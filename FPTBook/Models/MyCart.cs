@@ -26,7 +26,7 @@ namespace FPTBook.Models
                 get { return items; }
             }
 
-            public void AddtoCart(Book _book, int _quantity = 1)
+            public void Add(Book _book, int _quantity = 1)
             {
                 var item = items.FirstOrDefault(s => s._cart_book.Book_ID == _book.Book_ID);
                 if (item == null)

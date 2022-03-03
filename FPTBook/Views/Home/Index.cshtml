@@ -22,22 +22,24 @@
             <div class="row">
                 @foreach (var item in Model)
                 {
-                        <div class="col-sm-6 col-md-4 portfolio-item">
-                            <a class="portfolio-link" href="#portfolioModal1" data-bs-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                                </div><img class="img-fluid" style="width:400px; height:450px" src="~/assets/img/@item.Img">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>@item.BookName</h4>
-                                <h5 class="text-muted">$ @item.Price</h5>
-                                <a class="btn btn-outline-primary " href="@Url.Action("Details","Books", new {id = item.Book_ID})" data-abc="true">View Products</a>
-                            </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a class="portfolio-link" href="@Url.Action("AddtoCart","MyCarts", new { id=item.Book_ID})">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div><img class="img-fluid" style="width:400px; height:450px" src="~/assets/img/@item.Img">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>@item.BookName</h4>
+                            <h5 class="text-muted">$ @item.Price</h5>
+                            <a class="btn btn-outline-primary " href="@Url.Action("Details","Books", new {id = item.Book_ID})" data-abc="true">View Products</a>
                         </div>
+                    </div>
                 }
             </div>
         </div>
-    <!-- Start: ml cinel cursos heading -->
+        <!-- Start: ml cinel cursos heading -->
         <h1 class="display-4 text-uppercase text-center" style="padding-top: 10px; padding-bottom: 10px; color: orangered; background-color: var(--bs-gray-800)">Famous Author </h1><!-- End: ml cinel cursos heading -->
     </section>
     <section class="bg-light" id="team" style="padding: 28px 0px;">
