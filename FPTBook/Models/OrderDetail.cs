@@ -17,6 +17,7 @@ namespace FPTBook.Models
         public int Order_ID { get; set; }
 
         [Required(ErrorMessage = "Enter Quantity,please!")]
+        [Range(0, 500, ErrorMessage = "Please in input positive number")]
         public int Quantity { get; set; }
         public int Amount { get; set; }
         public int  Price {get;set;}

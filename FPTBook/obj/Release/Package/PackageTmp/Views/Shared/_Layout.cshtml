@@ -55,7 +55,8 @@
                         <li class="nav-item"><a class="nav-link" @Html.ActionLink("About", "About", "Home")</li>
                         <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li class="nav-item"><a class="nav-link" @Html.ActionLink($"Hi!{Session["UserName"]}", "EditInfor", "User")</li>
-                        <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-opencart"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("ViewCart","MyCarts")">
+                            <i class="fa fa-opencart" style="font-size:20px">@Html.Action("NumberCart", "MyCarts")</i></a></li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","User")">LOG OUT</a></li>
                     </ul>
                     }

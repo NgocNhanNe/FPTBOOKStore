@@ -51,6 +51,8 @@ D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\roslyn\vbc.rsp
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\roslyn\VBCSCompiler.exe
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\roslyn\VBCSCompiler.exe.config
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\Antlr3.Runtime.dll
+D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.dll
+D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.SqlServer.dll
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\Microsoft.Web.Infrastructure.dll
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\Newtonsoft.Json.dll
@@ -62,6 +64,8 @@ D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\System.Web.WebPages.Deploymen
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\System.Web.WebPages.dll
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\System.Web.WebPages.Razor.dll
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\WebGrease.dll
+D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.xml
+D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.SqlServer.xml
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\System.Web.Helpers.xml
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\System.Web.Mvc.xml
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\System.Web.Optimization.xml
@@ -76,9 +80,6 @@ D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.csproj.CoreComp
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.csproj.CopyComplete
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.dll
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.pdb
-D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.dll
-D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.SqlServer.dll
-D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.xml
-D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\EntityFramework.SqlServer.xml
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.Migrations.FirstRun.resources
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.csproj.GenerateResource.cache
+D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.csproj.AssemblyReference.cache
