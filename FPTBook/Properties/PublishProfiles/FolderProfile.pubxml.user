@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\mywebsite</_PublishTargetUrl>
-    <History>True|2022-03-03T06:17:19.8286358Z;True|2022-03-03T12:03:53.1728496+07:00;True|2022-03-02T19:19:45.7302569+07:00;True|2022-03-02T19:18:28.7033207+07:00;True|2022-03-02T17:44:51.4883683+07:00;True|2022-03-02T17:44:37.5034538+07:00;True|2022-03-02T17:33:42.0775678+07:00;True|2022-03-02T17:33:20.9799983+07:00;True|2022-03-02T17:29:57.8052843+07:00;True|2022-03-02T17:26:54.5637645+07:00;True|2022-03-02T13:24:06.7015370+07:00;True|2022-03-02T10:08:35.7904744+07:00;True|2022-03-02T10:06:09.9980044+07:00;True|2022-02-28T21:30:42.7006683+07:00;True|2022-02-28T21:30:26.8667890+07:00;True|2022-02-28T21:28:07.6800013+07:00;True|2022-02-28T15:59:23.4689442+07:00;True|2022-02-26T13:21:35.7752765+07:00;True|2022-02-25T09:34:41.9478166+07:00;True|2022-02-24T19:22:59.5078455+07:00;True|2022-02-24T14:04:44.8237260+07:00;True|2022-02-23T21:49:27.4321413+07:00;True|2022-02-23T21:32:49.8431894+07:00;True|2022-02-23T10:58:44.2015356+07:00;True|2022-02-23T10:49:10.3287038+07:00;</History>
+    <History>True|2022-03-03T14:54:09.2374794Z;True|2022-03-03T21:27:01.9384530+07:00;True|2022-03-03T13:17:19.8286358+07:00;True|2022-03-03T12:03:53.1728496+07:00;True|2022-03-02T19:19:45.7302569+07:00;True|2022-03-02T19:18:28.7033207+07:00;True|2022-03-02T17:44:51.4883683+07:00;True|2022-03-02T17:44:37.5034538+07:00;True|2022-03-02T17:33:42.0775678+07:00;True|2022-03-02T17:33:20.9799983+07:00;True|2022-03-02T17:29:57.8052843+07:00;True|2022-03-02T17:26:54.5637645+07:00;True|2022-03-02T13:24:06.7015370+07:00;True|2022-03-02T10:08:35.7904744+07:00;True|2022-03-02T10:06:09.9980044+07:00;True|2022-02-28T21:30:42.7006683+07:00;True|2022-02-28T21:30:26.8667890+07:00;True|2022-02-28T21:28:07.6800013+07:00;True|2022-02-28T15:59:23.4689442+07:00;True|2022-02-26T13:21:35.7752765+07:00;True|2022-02-25T09:34:41.9478166+07:00;True|2022-02-24T19:22:59.5078455+07:00;True|2022-02-24T14:04:44.8237260+07:00;True|2022-02-23T21:49:27.4321413+07:00;True|2022-02-23T21:32:49.8431894+07:00;True|2022-02-23T10:58:44.2015356+07:00;True|2022-02-23T10:49:10.3287038+07:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="assets/bootstrap/css/bootstrap.min.css">
@@ -399,10 +399,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/03/2015 16:32:26</publishTime>
     </File>
     <File Include="bin/FPTBook.dll">
-      <publishTime>03/03/2022 13:17:19</publishTime>
+      <publishTime>03/03/2022 21:27:00</publishTime>
     </File>
     <File Include="bin/FPTBook.pdb">
-      <publishTime>03/03/2022 13:17:19</publishTime>
+      <publishTime>03/03/2022 21:27:00</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/09/2018 16:10:50</publishTime>
@@ -720,7 +720,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/24/2022 13:34:55</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>03/02/2022 17:35:28</publishTime>
+      <publishTime>03/03/2022 21:25:49</publishTime>
     </File>
     <File Include="Views/ManageUser/Create.cshtml">
       <publishTime>02/24/2022 12:39:07</publishTime>
@@ -741,7 +741,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/03/2022 13:07:55</publishTime>
     </File>
     <File Include="Views/MyCarts/ViewCart.cshtml">
-      <publishTime>03/03/2022 12:56:32</publishTime>
+      <publishTime>03/03/2022 21:53:46</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>02/26/2022 17:05:46</publishTime>
@@ -750,7 +750,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/03/2022 11:30:34</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/03/2022 13:16:13</publishTime>
+      <publishTime>03/03/2022 20:45:32</publishTime>
     </File>
     <File Include="Views/User/EditInfor.cshtml">
       <publishTime>02/23/2022 09:45:14</publishTime>

@@ -24,40 +24,42 @@
                                     <th scope="col">Book</th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Sub Total</th>
+                                    <th scope="col">Amount</th>
                                     <th scope="col" class="text-right d-none d-md-block" width="200"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model.Items)
                                 {
-                                    <tr>
+                                <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div><img src="~/assets/img/@item._cart_book.Img" style="height: 300px; width:250px"></div>
+                                            <figcaption class="info">
+                                                <a href="@Url.Action("Details","Books", new {id = item._cart_book.Book_ID})" class="title text-dark" data-abc="true"><b>@item._cart_book.BookName</b></a>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    @using (Html.BeginForm("UpdateQuantity", "MyCarts"))
+                                    {
                                         <td>
-                                            <figure class="itemside align-items-center">
-                                                <div><img src="~/assets/img/@item._cart_book.Img"></div>
-                                                <figcaption class="info">
-                                                    <a href="@Url.Action("Details","Books", new {id = item._cart_book.Book_ID})" class="title text-dark" data-abc="true"><b>@item._cart_book.BookName</b></a>
-                                                </figcaption>
-                                            </figure>
+                                            <input type="hidden" value="@item._cart_book.Book_ID" name="Book_ID" />
+                                            <input type="number" style="width: 60px;" value="@item._cart_quantity" name="Quantity" min="1" />
+                                            <button type="submit" class="btn" style="background-color:lightgreen" data-abc="true"> Update</button>
                                         </td>
-                                        @using (Html.BeginForm("UpdateQuantity", "ShoppingCart"))
-                                        {
-                                            <td>
-                                                <input type="number" style="width: 60px;" value="@item._cart_quantity" name="Quantity" min="1" />
-                                            </td>
-                                        }
-                                        <td>
-                                            <div class="price-wrap">
-                                                <var class="price">$@item._cart_book.Price</var>
-                                            </div>
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td class="text-right d-none d-md-block">
-                                            <a href="" class="btn" style="background-color:lightgreen" data-abc="true"> Update</a>
-                                            <a href="" class="btn" style="background-color:darkorange" data-abc="true"> Remove</a>
-                                        </td>
-                                    </tr>
+                                    }
+                                    <td>
+                                        <div class="price-wrap">
+                                            <var class="price">$@item._cart_book.Price</var>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @Model.Total(item._cart_book)
+                                    </td>
+                                    <td class="text-right d-none d-md-block">
+                                        <a href="@Url.Action("Delete", "MyCarts", new { id = item._cart_book.Book_ID})" class="btn" style="background-color:darkorange" data-abc="true"> Remove</a>
+                                    </td>
+                                </tr>
                                 }
                             </tbody>
                         </table>
@@ -65,21 +67,11 @@
                 </div>
             </aside>
             <aside class="col-lg-3">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label>Have coupon?</label>
-                                <div class="input-group"> <input type="text" class="form-control coupon" name="" placeholder="Coupon code"> <span class="input-group-append"> <button class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <div class="card">
                     <div class="card-body">
                         <dl class="dlist-align">
                             <dt>Total price:</dt>
-                            <dd class="text-right ml-3">$69.97</dd>
+                            <dd class="text-right ml-3">@Model.TotalPrice()</dd>
                         </dl>
                         <dl class="dlist-align">
                             <dt>Discount:</dt>

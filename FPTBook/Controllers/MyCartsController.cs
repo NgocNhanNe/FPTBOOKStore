@@ -66,7 +66,7 @@ namespace FPTBook.Controllers
             MyCart cart = Session["Cart"] as MyCart;
 
             if (cart != null)
-                total_item = cart.Total();
+                total_item = cart.TotalQuantity();
             ViewBag.TotalItem = total_item;
 
             return PartialView("NumberCart");
