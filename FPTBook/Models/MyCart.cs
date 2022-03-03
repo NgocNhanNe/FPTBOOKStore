@@ -5,13 +5,6 @@ using System.Web;
 
 namespace FPTBook.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
-
-    namespace FPTBook.Models
-    {
         public class CartItem
         {
             public Book _cart_book { get; set; }
@@ -52,7 +45,7 @@ namespace FPTBook.Models
                 }
             }
 
-            public double Amout()
+            public double Amount()
             {
                 var total = items.Sum(s => s._cart_book.Price * s._cart_quantity);
 
@@ -75,4 +68,3 @@ namespace FPTBook.Models
             }
         }
     }
-}

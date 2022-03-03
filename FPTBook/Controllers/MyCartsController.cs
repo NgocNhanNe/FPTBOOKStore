@@ -1,6 +1,5 @@
 ﻿using FPTBook.DB;
 using FPTBook.Models;
-using FPTBook.Models.FPTBook.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
