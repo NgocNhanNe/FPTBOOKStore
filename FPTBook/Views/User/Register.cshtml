@@ -6,8 +6,7 @@
 <br />
 <br />
 <br />
-<br />
-<br />
+
 <!-- Start: Overlay -->
 <div style="height: 100%;background-position: center;background-size: cover;background-repeat: no-repeat;background-color:darkorange">
     <div class="d-flex justify-content-center align-items-center">
@@ -71,9 +70,17 @@
             </div>
             <div class="form-group mb-3" style="color: var(--bs-body-bg);">
                 <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><br></label>
-                <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: var(--bs-body-bg);font-weight: bold;">Gender</label>
-                @Html.RadioButtonFor(model => model.Gender, "Male")<span>Male</span>
-                @Html.RadioButtonFor(model => model.Gender, "FeMale")<span>Female</span>
+                <div class="row form-group">
+                    <div class="col col-sm-4">
+                        <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: var(--bs-body-bg);font-weight: bold;">Gender</label>
+                    </div>
+                    <div class="col col-sm-4">
+                        @Html.RadioButtonFor(model => model.Gender, "Male")<span>Male</span>
+                    </div>
+                    <div class="col col-sm-4">
+                        @Html.RadioButtonFor(model => model.Gender, "FeMale")<span>Female</span>
+                    </div>
+                </div>             
                 @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
             </div>
             <div class="row">
