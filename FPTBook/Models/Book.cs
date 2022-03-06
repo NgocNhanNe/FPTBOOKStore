@@ -21,7 +21,7 @@ namespace FPTBook.Models
         public int Quantity { get; set; }
         [Required(ErrorMessage = "Enter Price,please!")]
         [Range(1,1000)]
-        public int Price { get; set; }
+        public int Price { get; set; } 
         [StringLength(500)]
         public string Description { get; set; }
         [DataType(DataType.Upload)]
