@@ -20,7 +20,7 @@ namespace FPTBook.Controllers
         // GET: ManageUser
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+                return View(db.Users.ToList());
         }
 
         // GET: ManageUser/Create
