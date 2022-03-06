@@ -23,7 +23,7 @@ namespace FPTBook.Controllers
             return View(books.ToList());
         }
 
-        // GET: Books/Details/5
+        // GET: Books/Details
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -67,7 +67,7 @@ namespace FPTBook.Controllers
             return View(book);
         }
 
-        // GET: Books/Edit/5
+        // GET: Books/Edit
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -117,7 +117,7 @@ namespace FPTBook.Controllers
             return View(book);
         }
 
-        // GET: Books/Delete/5
+        // GET: Books/Delete
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -132,7 +132,7 @@ namespace FPTBook.Controllers
             return View(book);
         }
 
-        // POST: Books/Delete/5
+        // POST: Books/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
