@@ -20,7 +20,6 @@ namespace FPTBook.Models
         [Range(0, 500, ErrorMessage = "Please in input positive number")]
         public int Quantity { get; set; }
         public int Amount { get; set; }
-        public int  Price {get;set;}
         
         public virtual Order Order { get; set; }
         public virtual Book Book { get; set; }

@@ -21,12 +21,13 @@ namespace FPTBook.Controllers
                 var totalBook = _db.Books.Count();
                 var totalCate = _db.Categories.Count();
                 var totalUser = _db.Users.Count();
-
+                var totalOrder = _db.Orders.Count();
                 
 
                 ViewBag.TotalBook = totalBook;
                 ViewBag.TotalCate = totalCate;
                 ViewBag.TotalUser = totalUser;
+                ViewBag.TotalOrder = totalOrder;
                 return View(books);
             }
             return RedirectToAction("Error");

@@ -22,7 +22,7 @@ namespace FPTBook.Models
         [Required(ErrorMessage = "Enter Price,please!")]
         [Range(1,1000)]
         public int Price { get; set; }
-        [StringLength(100)]
+        [StringLength(500)]
         public string Description { get; set; }
         [DataType(DataType.Upload)]
         [Required(ErrorMessage = "Please choose file to upload.")]

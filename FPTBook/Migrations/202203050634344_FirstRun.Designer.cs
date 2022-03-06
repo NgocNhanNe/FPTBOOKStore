@@ -13,7 +13,7 @@ namespace FPTBook.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202203030524493_FirstRun"; }
+            get { return "202203050634344_FirstRun"; }
         }
         
         string IMigrationMetadata.Source

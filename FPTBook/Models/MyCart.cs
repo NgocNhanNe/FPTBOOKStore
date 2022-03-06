@@ -5,72 +5,65 @@ using System.Web;
 
 namespace FPTBook.Models
 {
-        public class CartItem
+    public class CartItem
+    {
+        public Book _cart_book { get; set; }
+        public int _cart_quantity { get; set; }
+    }
+
+    public class MyCart
+    {
+        List<CartItem> items = new List<CartItem>();
+        public IEnumerable<CartItem> Items
         {
-            public Book _cart_book { get; set; }
-            public int _cart_quantity { get; set; }
+            get { return items; }
         }
 
-        public class MyCart
+        public void Add(Book _book, int _quantity = 1)
         {
-            List<CartItem> items = new List<CartItem>();
-            public IEnumerable<CartItem> Items
+            var item = items.FirstOrDefault(s => s._cart_book.Book_ID == _book.Book_ID);
+            if (item == null)
             {
-                get { return items; }
-            }
-
-            public void Add(Book _book, int _quantity = 1)
-            {
-                var item = items.FirstOrDefault(s => s._cart_book.Book_ID == _book.Book_ID);
-                if (item == null)
+                items.Add(new CartItem
                 {
-                    items.Add(new CartItem
-                    {
-                        _cart_book = _book,
-                        _cart_quantity = _quantity
-                    });
-                }
-                else
-                {
-                    item._cart_quantity += _quantity;
-                }
+                    _cart_book = _book,
+                    _cart_quantity = _quantity
+                });
             }
-
-            public void Update_Quantity_Book(int id, int _quantity)
+            else
             {
-                var item = items.Find(s => s._cart_book.Book_ID == id);
-                if (item != null)
-                {
-                    item._cart_quantity = _quantity;
-                }
+                item._cart_quantity += _quantity;
             }
+        }
 
-            public double Total(Book _book)
+        public void Update_Quantity_Book(int id, int _quantity)
+        {
+            var item = items.Find(s => s._cart_book.Book_ID == id);
+            if (item != null)
             {
-                var item = items.FirstOrDefault(s => s._cart_book.Book_ID == _book.Book_ID);
+                item._cart_quantity = _quantity;
+            }
+        }
 
-                var total = item._cart_book.Price * item._cart_quantity;
-                return total;
-            }
-            public double TotalPrice()
-            {
-                var total = items.Sum(s=>s._cart_book.Price * s._cart_quantity);
-                return total;
-            }
+        public double TotalPrice()
+        {
+            var total = items.Sum(s => s._cart_book.Price * s._cart_quantity);
+            return total;
+        }
 
-            public int TotalQuantity()
-            {
-                return items.Sum(s => s._cart_quantity);
-            }
+        public int TotalQuantity()
+        {
+            return items.Sum(s => s._cart_quantity);
+        }
 
-            public void DeleteCart(int id)
-            {
-                items.RemoveAll(s => s._cart_book.Book_ID == id);
-            }
+        public void DeleteCart(int id)
+        {
+            items.RemoveAll(s => s._cart_book.Book_ID == id);
+        }
 
-            public void ClearCart()
-            {
-                items.Clear();
-            }
+        public void ClearCart()
+        {
+            items.Clear();
         }
     }
+}

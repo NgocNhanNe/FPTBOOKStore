@@ -1,0 +1,119 @@
+﻿@model FPTBook.Models.MyCart
+@{
+    ViewBag.Title = "ViewCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewCart</h2>
+<br />
+<br />
+<br />
+<h2>Shopping Cart (@Model.TotalQuantity())items</h2>
+@if (Model != null)
+{
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" />
+    <div class="container-fluid" style="background-color: antiquewhite">
+        <div class="row">
+            <aside class="col-lg-9">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-shopping-cart">
+                            <thead style="color: black">
+                                <tr class="small text-uppercase">
+                                    <th scope="col">Book</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col" class="text-right d-none d-md-block" width="200"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Items)
+                                {
+                                    double total = item._cart_book.Price * item._cart_quantity;
+                                    <tr>
+                                        <td>
+                                            <figure class="itemside align-items-center">
+                                                <div><img src="~/assets/img/@item._cart_book.Img" style="height: 200px; width:150px"></div>
+                                                <figcaption class="info">
+                                                    <a href="@Url.Action("Details","Books", new {id = item._cart_book.Book_ID})" class="title text-dark" data-abc="true"><b>@item._cart_book.BookName</b></a>
+                                                </figcaption>
+                                            </figure>
+                                        </td>
+                                        @using (Html.BeginForm("UpdateQuantity", "MyCart1"))
+                                        {
+                                            <td>
+                                                <input type="hidden" value="@item._cart_book.Book_ID" name="Book_ID" />
+                                                <input type="number" style="width: 70px;background-color:white" value="@item._cart_quantity" name="Quantity" min="1" />
+                                                <button type="submit" class="btn" style="background-color:darkorange; font-size:5px; color:black" data-abc="true">(<>)</button>
+
+                                            </td>
+                                        }
+                                        <td>
+                                           $@item._cart_book.Price
+                                        </td>
+
+                                        <td>
+                                           $ @total
+                                        </td>
+                                        <td class="text-right d-none d-md-block">
+                                            <a href="@Url.Action("Delete", "MyCart1", new { id = item._cart_book.Book_ID})" class="btn" style="background-color:darkorange; " data-abc="true">Remove</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </aside>
+            <aside class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <dl class="dlist-align">
+                            <dt style="margin-bottom:15px; font-size:40px">Total:</dt>
+                            <dd class="text-right ml-3" style="font-weight: bold; font-size:30px" >$ @Model.TotalPrice()</dd>
+                        </dl>
+                        <hr>
+                        <a href="@Url.Action("Index", "Home")" class="btn" style="background-color:darkorange; color:black" data-abc="true">Continue Buy </a>
+
+                    </div>
+
+                </div>
+            </aside>
+        </div>
+    </div>
+    <hr />
+    <h1>Check out</h1>
+    <section class="register-photo" style="margin-top:-150px;" id="Checkout">
+        <div class="form-container" style="align-self:center">
+            @using (Html.BeginForm("Checkout", "MyCart1", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @style = "background: antiquewhite" }))
+            {
+                <div class="mb-3">
+                    <label class="form-label" style="font-size: 21px;color: black;font-weight: bold;">Delivery address<span style="font-size: 15px; color:darkred">(*required)</span></label>
+                    <input type="text" class="form-control" name="Address_Delivery" placeholder="Enter Delivery address">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" style="font-size: 21px;color: black;font-weight: bold;">Phone Numbers<span style="font-size: 15px; color: darkred">(*required)</span></label>
+                    <input type="text" class="form-control" name="Phone_Delivery" placeholder="Enter phone number">
+                </div>
+                <div class="mb-3">
+                    <label for="form-label" class="form-label" style="font-size: 21px;color: black;font-weight: bold;">User Name</label>
+                    <input type="text" class="form-control" name="Username" value="@Session["UserName"]" readonly>
+                </div>
+
+                <div class="mb-3" style="color:antiquewhite">
+                    <label class="form-label" style="font-size: 21px;color: black;font-weight: bold;">Total Price</label>
+                    <input type="text" style="font-weight:bold" class="form-control" name="totalPrice" value="@Model.TotalPrice()">
+                </div>
+                
+                <div class="cart-footer text-right">
+                    <button type="submit" style="background-color:darkorange" class="btn"><i class="start-icon"></i>Checkout</button>
+                    <a href="@Url.Action("Index","Home")" class="btn btn-dark my-1">Cancel<i class="rounded-left ml-2"></i></a>
+                </div>
+
+            }
+        </div>
+</section>
+
+}

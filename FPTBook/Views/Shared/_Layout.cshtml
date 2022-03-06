@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,300,500,700)" />
+    <link rel="stylesheet" href="https://icons.getbootstrap.com/icons/arrow-repeat/" />
     <link rel="stylesheet" href="~/assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="~/assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="~/assets/fonts/ionicons.min.css">
@@ -22,6 +23,8 @@
     <link rel="stylesheet" href="~/assets/css/Ludens-Users---2-Simple-Registration-Section.css">
     <link rel="stylesheet" href="~/assets/css/Search-Input-Responsive-with-Icon.css">
     <link rel="stylesheet" href="~/assets/css/quantity.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" />
+    <link rel="stylesheet" href="~/assets/css/checkout.css" />
 </head>
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
     <div>
@@ -57,8 +60,8 @@
                         <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li class="nav-item"><a class="nav-link" @Html.ActionLink($"Hi!{Session["UserName"]}", "EditInfor", "User")</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("ViewCart","MyCarts")">
-                                <i class="fa fa-opencart" style="font-size:20px">@Html.Action("NumberCart", "MyCarts")</i>
+                            <a class="nav-link" href="@Url.Action("ViewCart","MyCart1")">
+                                <i class="fa fa-opencart" style="font-size:20px">@Html.Action("NumberCart", "MyCart1")</i>
                             </a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","User")">LOG OUT</a></li>

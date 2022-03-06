@@ -9,9 +9,9 @@ using System.Web.Mvc;
 
 namespace FPTBook.Controllers
 {
-    public class MyCartsController : Controller
+    public class MyCart1Controller : Controller
     {
-        // GET: MyCarts
+        // GET: MyCarts1
         private MyApplicationDbContext _db = new MyApplicationDbContext();
         //GET: ShoppingCart
         public MyCart GetCart()
@@ -28,12 +28,16 @@ namespace FPTBook.Controllers
 
         public ActionResult AddtoCart(int id)
         {
-            var book = _db.Books.SingleOrDefault(s => s.Book_ID == id);
-            if (book != null)
+            if (Session["UserName"] != null)
             {
-                GetCart().Add(book);
+                var book = _db.Books.SingleOrDefault(s => s.Book_ID == id);
+                if (book != null)
+                {
+                    GetCart().Add(book);
+                }
+                return RedirectToAction("ViewCart", "MyCart1");
             }
-            return RedirectToAction("ViewCart", "MyCarts");
+            return RedirectToAction("Login", "User");
         }
 
         public ActionResult UpdateQuantity(FormCollection form)
@@ -42,13 +46,13 @@ namespace FPTBook.Controllers
             int id_book = int.Parse(form["Book_ID"]);
             int quantity = int.Parse(form["Quantity"]);
             cart.Update_Quantity_Book(id_book, quantity);
-            return RedirectToAction("ViewCart", "MyCarts");
+            return RedirectToAction("ViewCart", "MyCart1");
         }
 
         public ActionResult ViewCart()
         {
             if (Session["Cart"] == null)
-                return RedirectToAction("ViewCart", "MyCarts");
+                return RedirectToAction("ViewCart", "MyCart1");
             MyCart cart = Session["Cart"] as MyCart;
             return View(cart);
 
@@ -57,7 +61,7 @@ namespace FPTBook.Controllers
         {
             MyCart cart = Session["Cart"] as MyCart;
             cart.DeleteCart(id);
-            return RedirectToAction("ViewCart", "MyCarts");
+            return RedirectToAction("ViewCart", "MyCart1");
         }
         public PartialViewResult NumberCart()
         {
@@ -80,8 +84,8 @@ namespace FPTBook.Controllers
                 _order.Order_Date = DateTime.Now;
                 _order.Username = form["Username"];
                 _order.Address_Delivery = form["Address_Delivery"];
-                _order.Phone_Delivery = Convert.ToInt32(form["Phone_Delivery"]);
-                _order.Total = Convert.ToInt32(form["Total"]);
+                _order.Phone_Delivery = int.Parse(form["Phone_Delivery"]);
+                _order.totalPrice = int.Parse(form["totalPrice"]);
                 _db.Orders.Add(_order);
 
                 foreach (var item in cart.Items)
@@ -100,10 +104,9 @@ namespace FPTBook.Controllers
 
                     _db.OrderDetails.Add(orderDetail);
                 }
-
                 _db.SaveChanges();
                 cart.ClearCart();
-                return RedirectToAction("Checkout_Success", "MyCarts", new { id = _order.Order_ID });
+                return RedirectToAction("Checkout_Success", "MyCart1", new { id = _order.Order_ID });
             }
             catch
             {

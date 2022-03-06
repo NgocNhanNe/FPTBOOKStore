@@ -18,7 +18,7 @@ namespace FPTBook.Models
         [Required(ErrorMessage = "Enter choose Order Date,please!")]
         [DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
         public DateTime Order_Date { get; set; }
-        public int Total { get; set; }
+        public int totalPrice { get; set; }
         public string Username { get; set; }
         [Required(ErrorMessage = "Enter address to delivery,please!")]
         public string Address_Delivery { get; set; }

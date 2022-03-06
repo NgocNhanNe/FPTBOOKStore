@@ -131,16 +131,17 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageUserController.cs" />
-    <Compile Include="Controllers\MyCartsController.cs" />
+    <Compile Include="Controllers\MyCart1Controller.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DB\MyApplicationDbContext.cs" />
     <Compile Include="fonts\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203030524493_FirstRun.cs" />
-    <Compile Include="Migrations\202203030524493_FirstRun.Designer.cs">
-      <DependentUpon>202203030524493_FirstRun.cs</DependentUpon>
+    <Compile Include="Migrations\202203050634344_FirstRun.cs" />
+    <Compile Include="Migrations\202203050634344_FirstRun.Designer.cs">
+      <DependentUpon>202203050634344_FirstRun.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -176,9 +177,9 @@
     <Content Include="assets\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\bootstrap\js\bootstrap.min.js" />
     <Content Include="assets\css\Article-Dual-Column.css" />
-    <Content Include="assets\css\beach.jpg" />
     <Content Include="assets\css\Bold-BS4-Footer-Big-Logo.css" />
     <Content Include="assets\css\Bootstrap-4-Custom-Radio.css" />
+    <Content Include="assets\css\checkout.css" />
     <Content Include="assets\css\Contact-Form-Clean.css" />
     <Content Include="assets\css\dropdown.css" />
     <Content Include="assets\css\Login-Form-Clean.css" />
@@ -289,8 +290,11 @@
     <Content Include="Views\ManageUser\Index.cshtml" />
     <Content Include="Views\Admin\Error.cshtml" />
     <Content Include="Views\Books\Create.cshtml" />
-    <Content Include="Views\MyCarts\NumberCart.cshtml" />
-    <Content Include="Views\MyCarts\ViewCart.cshtml" />
+    <Content Include="Views\MyCart1\ViewCart.cshtml" />
+    <Content Include="Views\MyCart1\NumberCart.cshtml" />
+    <Content Include="Views\MyCart1\Checkout_Success.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -309,8 +313,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203030524493_FirstRun.resx">
-      <DependentUpon>202203030524493_FirstRun.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203050634344_FirstRun.resx">
+      <DependentUpon>202203050634344_FirstRun.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

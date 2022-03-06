@@ -23,7 +23,7 @@
                 @foreach (var item in Model)
                 {
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a class="portfolio-link" href="@Url.Action("AddtoCart","MyCarts", new { id=item.Book_ID})">
+                        <a class="portfolio-link" href="@Url.Action("AddtoCart","MyCart1", new { id=item.Book_ID})">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
@@ -82,6 +82,8 @@
     </section>
     <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="~/assets/js/agency.js"></script>
+
+   
 </body>
 
 </html>
