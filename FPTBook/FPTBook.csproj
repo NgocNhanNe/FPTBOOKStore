@@ -195,10 +195,12 @@
     <Content Include="assets\fonts\fontawesome5-overrides.min.css" />
     <Content Include="assets\fonts\ionicons.min.css" />
     <Content Include="assets\fonts\ionicons.svg" />
+    <Content Include="assets\img\360_F_368972123_2epils8777nGiYkAT2VmuHX9GkLWk2Jd.jpg" />
     <Content Include="assets\img\Author\330px-R._L._Stine_by_Gage_Skidmore.jpg" />
     <Content Include="assets\img\Author\J._K._Rowling_2010.jpg" />
     <Content Include="assets\img\Author\stephen-king.jpg" />
     <Content Include="assets\img\backgrHeader.jpg" />
+    <Content Include="assets\img\Untitled-1-620-1432-1456882880.jpg" />
     <Content Include="assets\js\agency.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
