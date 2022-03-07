@@ -38,8 +38,8 @@ namespace FPTBook.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditInforAdmin(User obj)
         {
-            User tmp = db.Users.ToList().Find(x => x.UserName == obj.UserName); 
-            if (tmp != null) 
+            User tmp = db.Users.ToList().Find(x => x.UserName == obj.UserName); //find the customer in a list have the same ID with the ID input
+            if (tmp != null)  //if find out the customer
             {
                 tmp.UserName = obj.UserName;
                 tmp.FullName = obj.FullName;
@@ -49,11 +49,47 @@ namespace FPTBook.Controllers
                 tmp.Birthday = obj.Birthday;
                 tmp.Address = obj.Address;
                 tmp.ConfirmPassword = GetMD5(obj.ConfirmPassword);
-                tmp.state = obj.state = 0;
+                tmp.state = obj.state = 1;
             }
             db.SaveChanges();
-            return View("Index","ManagementUser");
+            return RedirectToAction("Index","Admin");
         }
+
+
+        // GET: ManageUser/Edit
+        //public ActionResult Edit(string id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    User account = db.Users.Find(id);
+        //    if (account == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(account);
+        //}
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit( User user)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Users.Attach(user);
+        //        db.Entry(user).Property(a => a.FullName).IsModified = true;
+        //        db.Entry(user).Property(a => a.Password).IsModified = true;
+        //        db.Entry(user).Property(a => a.ConfirmPassword).IsModified = true;
+        //        db.Entry(user).Property(a => a.Email).IsModified = true;
+        //        db.Entry(user).Property(a => a.Telephone).IsModified = true;
+        //        db.Entry(user).Property(a => a.Address).IsModified = true;
+        //        db.Entry(user).Property(a => a.state).IsModified = true;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(user);
+        //}
 
         // GET: ManageUser/Delete
         public ActionResult Delete(string id)

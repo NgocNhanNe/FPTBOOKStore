@@ -66,8 +66,8 @@
         <div class="form-group mb-3" style="color: var(--bs-body-bg);">
             <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><br></label>
             <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: black;font-weight: bold;">Gender</label>
-            @Html.RadioButtonFor(model => model.Gender, "Male")<span>Male</span>
-            @Html.RadioButtonFor(model => model.Gender, "FeMale")<span>Female</span>
+            @Html.RadioButtonFor(model => model.Gender, "Male")<span style="color:black">Male</span>
+            @Html.RadioButtonFor(model => model.Gender, "FeMale")<span style="color:black">Female</span>
             @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
         </div>
         <div class="row">
