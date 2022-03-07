@@ -27,9 +27,6 @@ namespace FPTBook.Controllers
             return View();
         }
 
-        // POST: Categories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Cat_ID,CatName,Description")] Category category)
@@ -44,7 +41,7 @@ namespace FPTBook.Controllers
             return View(category);
         }
 
-        // GET: Categories/Edit/5
+        // GET: Categories/Edit
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -59,9 +56,7 @@ namespace FPTBook.Controllers
             return View(category);
         }
 
-        // POST: Categories/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Categories/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Cat_ID,CatName,Description")] Category category)
@@ -75,7 +70,7 @@ namespace FPTBook.Controllers
             return View(category);
         }
 
-        // GET: Categories/Delete/5
+        // GET: Categories/Delete
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -90,7 +85,7 @@ namespace FPTBook.Controllers
             return View(category);
         }
 
-        // POST: Categories/Delete/5
+        // POST: Categories/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
