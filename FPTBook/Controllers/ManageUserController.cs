@@ -23,35 +23,6 @@ namespace FPTBook.Controllers
                 return View(db.Users.ToList());
         }
 
-
-        // GET: ManageUser/Edit
-        public ActionResult Edit(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserName,Password,ConfirmPassword,FullName,Email,Address,Telephone,Birthday,Gender,state")] User user)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(user);
-        }
-
         // GET: ManageUser/Delete
         public ActionResult Delete(string id)
         {
