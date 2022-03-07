@@ -23,6 +23,38 @@ namespace FPTBook.Controllers
                 return View(db.Users.ToList());
         }
 
+        public ActionResult EditInforAdmin()
+        {
+            var user = Session["UserAdmin"];
+            User obj = db.Users.ToList().Find(x => x.UserName.Equals(user));
+            if (obj == null)
+            {
+                return HttpNotFound();
+            }
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditInforAdmin(User obj)
+        {
+            User tmp = db.Users.ToList().Find(x => x.UserName == obj.UserName); //find the customer in a list have the same ID with the ID input
+            if (tmp != null)  //if find out the customer
+            {
+                tmp.UserName = obj.UserName;
+                tmp.FullName = obj.FullName;
+                tmp.Password = GetMD5(obj.Password);
+                tmp.Telephone = obj.Telephone;
+                tmp.Email = obj.Email;
+                tmp.Birthday = obj.Birthday;
+                tmp.Address = obj.Address;
+                tmp.ConfirmPassword = GetMD5(obj.ConfirmPassword);
+                tmp.state = obj.state = 0;
+            }
+            db.SaveChanges();
+            return View("Index","ManagementUser");
+        }
+
         // GET: ManageUser/Delete
         public ActionResult Delete(string id)
         {

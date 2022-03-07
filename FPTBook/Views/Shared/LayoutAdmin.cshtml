@@ -20,9 +20,8 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item">
-                        <a class="nav-link" style="font-size:25.6px">
-                            Hi! Admin
-                        </a>
+                        <a class="nav-link" style="font-size:25.6px"  @Html.ActionLink($"Hi!{Session["UserAdmin"]}", "EditInforAdmin", "ManageUser")    
+                    </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href=@Url.Action("Index","ManageUser") style="font-size: 15.6px; color: var(--bs-gray-800); font-size: 15.6px; font-weight: bold;">

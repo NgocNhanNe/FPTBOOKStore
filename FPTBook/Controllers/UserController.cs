@@ -97,13 +97,12 @@ namespace FPTBook.Controllers
             User obj = _db.Users.ToList().Find(x => x.UserName.Equals(user));
             if (obj == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Login");
             }
             return View(obj);
         }
 
         [HttpPost]
-        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult EditInfor(User obj)
         {
