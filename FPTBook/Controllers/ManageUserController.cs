@@ -23,30 +23,8 @@ namespace FPTBook.Controllers
                 return View(db.Users.ToList());
         }
 
-        // GET: ManageUser/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
 
-        // POST: ManageUser/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserName,Password,ConfirmPassword,FullName,Email,Address,Telephone,Birthday,Gender,state")] User user)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Users.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(user);
-        }
-
-        // GET: ManageUser/Edit/5
+        // GET: ManageUser/Edit
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -61,9 +39,6 @@ namespace FPTBook.Controllers
             return View(user);
         }
 
-        // POST: ManageUser/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "UserName,Password,ConfirmPassword,FullName,Email,Address,Telephone,Birthday,Gender,state")] User user)
@@ -77,7 +52,7 @@ namespace FPTBook.Controllers
             return View(user);
         }
 
-        // GET: ManageUser/Delete/5
+        // GET: ManageUser/Delete
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -92,7 +67,7 @@ namespace FPTBook.Controllers
             return View(user);
         }
 
-        // POST: ManageUser/Delete/5
+        // POST: ManageUser/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
