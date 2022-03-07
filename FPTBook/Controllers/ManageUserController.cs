@@ -38,8 +38,8 @@ namespace FPTBook.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditInforAdmin(User obj)
         {
-            User tmp = db.Users.ToList().Find(x => x.UserName == obj.UserName); //find the customer in a list have the same ID with the ID input
-            if (tmp != null)  //if find out the customer
+            User tmp = db.Users.ToList().Find(x => x.UserName == obj.UserName); 
+            if (tmp != null) 
             {
                 tmp.UserName = obj.UserName;
                 tmp.FullName = obj.FullName;
