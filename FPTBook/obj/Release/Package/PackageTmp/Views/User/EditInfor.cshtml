@@ -6,8 +6,6 @@
 <br />
 <br />
 <br />
-<br />
-<br />
 <!-- Start: Overlay -->
 <div style="height: 100%;background-position: center;background-size: cover;background-repeat: no-repeat;background-color:darkorange">
     <div class="d-flex justify-content-center align-items-center">
@@ -78,16 +76,13 @@
                     </div>
                     <div class="row">
                         <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: rgb(26,235,147);">Update</button></div>
-                        <a class="forgot" href="@Url.Action("Home")" style="color: var(--bs-gray-900);font-size: 17px;">Back Home Page</a>
+                        <a href="@Url.Action("Index","Home")" style="color:gold;font-size: 17px;">Back Home Page</a>
                     </div>
                 </form>
             }
         </div>
     </div>
 </div>
-<br />
-<br />
-<br />
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")
 }
