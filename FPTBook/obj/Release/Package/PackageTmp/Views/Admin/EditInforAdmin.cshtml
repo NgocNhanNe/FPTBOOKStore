@@ -1,0 +1,88 @@
+﻿@model FPTBook.Models.User
+@{
+    ViewBag.Title = "EditInforAdmin";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>EditInforAdmin</h2>
+@using (Html.BeginForm("EditInforAdmin", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", @style="margin-top:-45px"}))
+{
+    @Html.AntiForgeryToken()
+    <p>@ViewBag.error</p>
+    <form method="post" style="background-color:black">
+        <h2 class="text-center" style="margin-bottom: 20px;color: var(--bs-body-bg);">Edit Information</h2>
+        <div class="form-group mb-3">
+            <label class="form-label" style="margin-bottom: 10px;">
+                <strong>Username</strong><br>
+            </label><input class="form-control" type="text" style="margin-bottom: 20px;" placeholder="Enter Username" @Html.EditorFor(model => model.UserName)
+                           @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;">
+                <strong>Password</strong><br>
+            </label><input class="form-control" type="password" id="password" style="margin-bottom: 20px;" placeholder="Enter Password" @Html.EditorFor(model => model.Password)
+                           @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;">
+                <strong>Confirm Password</strong>
+            </label><input class="form-control" type="password" id="password" placeholder="Enter Password again" style="margin-bottom: 20px;" @Html.EditorFor(model => model.ConfirmPassword)
+                           @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><br></label>
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;">
+                <strong>Full Name</strong><br>
+            </label><input class="form-control" placeholder="Enter Full Name" style="margin-bottom: 20px;" @Html.EditorFor(model => model.FullName)
+                           @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><br></label>
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;">
+                <strong>Email</strong><br>
+            </label><input class="form-control" placeholder="Enter Email" style="margin-bottom: 20px;" @Html.EditorFor(model => model.Email)
+                           @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><br></label>
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;">
+                <strong>Address</strong><br>
+            </label><input class="form-control" placeholder="Enter Address" style="margin-bottom: 20px;" @Html.EditorFor(model => model.Address)
+                           @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><br></label>
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;">
+                <strong>Telephone</strong><br>
+            </label><input class="form-control" placeholder="Enter Telephone" style="margin-bottom: 20px;" @Html.EditorFor(model => model.Telephone)
+                           @Html.ValidationMessageFor(model => model.Telephone, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><br></label>
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;font-weight: bold;">Birthday</label>
+            <input class="form-control" type="date" @Html.EditorFor(model => model.Birthday)
+                   @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group mb-3" style="color: var(--bs-body-bg);">
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><br></label>
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: black;font-weight: bold;">Gender</label>
+            @Html.RadioButtonFor(model => model.Gender, "Male")<span style="color:black">Male</span>
+            @Html.RadioButtonFor(model => model.Gender, "FeMale")<span style="color:black">Female</span>
+            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: #505E6C;"><br></label>
+            <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;">
+                <strong>State</strong><br>
+            </label><input class="form-control" placeholder="Enter Telephone" style="margin-bottom: 20px;" @Html.EditorFor(model => model.state)
+                           @Html.ValidationMessageFor(model => model.state, "", new { @class = "text-danger" })
+        </div>
+        <div class="row">
+            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background-color:darkorange;">Update</button></div>
+            <button class="btn" href="@Url.Action("Index","Admin")" type="button" style="color: var(--bs-gray-900);font-size: 17px;">Back Home Page</button>
+        </div>
+    </form>
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -131,23 +131,6 @@ namespace FPTBook.Controllers
             return View("ErrorCart");
         }
 
-        public ActionResult OrderHistory(string id)
-        {
-            if (Session["Username"] != null)
-            {
-                var orderHis = _db.Orders.ToList().Where(s => s.Username == id);
-
-                if (id == null)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                }
-                if (orderHis == null)
-                {
-                    return HttpNotFound();
-                }
-                return View(orderHis);
-            }
-            return View("ErrorCart");
-        }
+       
     }
 }

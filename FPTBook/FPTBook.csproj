@@ -295,7 +295,7 @@
     <Content Include="Views\MyCart1\Checkout_Success.cshtml" />
     <Content Include="Views\Orders\Delete.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
-    <Content Include="Views\ManageUser\EditInforAdmin.cshtml" />
+    <Content Include="Views\Admin\EditInforAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

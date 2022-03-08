@@ -99,6 +99,7 @@ namespace FPTBook.Controllers
             {
                 return RedirectToAction("Login");
             }
+            
             return View(obj);
         }
 
@@ -106,26 +107,31 @@ namespace FPTBook.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditInfor(User obj)
         {
-            User tmp = _db.Users.ToList().Find(x => x.UserName == obj.UserName); //find the customer in a list have the same ID with the ID input
-            if (tmp != null)  //if find out the customer
+            if (ModelState.IsValid)
             {
+                User tmp = _db.Users.ToList().Find(x => x.UserName == obj.UserName);
+                if (tmp.Password != obj.Password)  //if find out the customer
+                {
+                    tmp.Password = GetMD5(obj.Password);
+                    tmp.ConfirmPassword = GetMD5(obj.ConfirmPassword);
+                }
                 tmp.UserName = obj.UserName;
                 tmp.FullName = obj.FullName;
-                tmp.Password = GetMD5(obj.Password);
                 tmp.Telephone = obj.Telephone;
                 tmp.Email = obj.Email;
+                tmp.Gender = obj.Gender;
                 tmp.Birthday = obj.Birthday;
                 tmp.Address = obj.Address;
-                tmp.ConfirmPassword = GetMD5(obj.ConfirmPassword);
                 tmp.state = obj.state = 0;
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Home");
             }
-            _db.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return View("EditInFor");
         }
         //Logout
         public ActionResult Logout()
         {
-            Session.Clear();//remove session
+            Session.Clear();
             return RedirectToAction("Index", "Home");
         }
         public static string GetMD5(string str)
