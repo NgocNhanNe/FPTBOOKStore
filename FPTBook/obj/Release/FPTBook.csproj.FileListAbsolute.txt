@@ -77,9 +77,9 @@ D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\Newtonsoft.Json.xml
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\Antlr3.Runtime.pdb
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Release\FPTBook.csproj.AssemblyReference.cache
-D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Release\FPTBook.Migrations.FirstRun.resources
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Release\FPTBook.csproj.GenerateResource.cache
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Release\FPTBook.csproj.CoreCompileInputs.cache
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Release\FPTBook.csproj.CopyComplete
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Release\FPTBook.dll
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Release\FPTBook.pdb
+D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Release\FPTBook.Migrations.AddFirstRun.resources

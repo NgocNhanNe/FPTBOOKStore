@@ -63,9 +63,9 @@
         @Html.DisplayFor(modelItem => item.state)
     </td>
     <td>
-        @Html.ActionLink("Delete", "Delete", new { id = item.UserName })*
+        @Html.ActionLink(" ", "Delete", new { id = item.UserName }, new { @class = "fas fa-trash", @style = "color:darkorange" })
     </td>
 </tr>
 }
-
+    
 </table>

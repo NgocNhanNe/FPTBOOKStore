@@ -28,7 +28,7 @@
                     @Html.TextBoxFor(m => m.Password, "", new { @class = "form-control", @placeholder = "Password", @type = "password", @style = "width: 256px;" })
                 </div>
                 <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="color: var(--bs-body-bg);background: var(--bs-orange);">Log In</button></div>
-                <a class="forgot" href="@Url.Action("Home")" style="color: var(--bs-gray-900);font-size: 17px;">Back Home Page</a>
+                <a class="forgot" href="@Url.Action("Index","Home")" style="color: var(--bs-gray-900);font-size: 17px;">Back Home Page</a>
             </form>
         }
     </section><!-- End: Login Form Clean -->

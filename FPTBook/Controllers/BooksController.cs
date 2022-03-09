@@ -91,41 +91,47 @@ namespace FPTBook.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Book_ID,BookName,Quantity,Img,Price,Description,Cat_ID")] Book book, HttpPostedFileBase file, int id)
         {
-            Book rebook = db.Books.Find(id);
-            string pic = "";
-            if (file != null && file.ContentLength > 0)
+            if (ModelState.IsValid)
             {
-                string file_name = book.Img;
-                string path1 = Server.MapPath("~/assets/img/");
-                string checkimg = Path.GetExtension(file.FileName);
-                if (checkimg.ToLower() == ".jpg" || checkimg.ToLower() == ".jpeg" || checkimg.ToLower() == ".png")
+                Book rebook = db.Books.Find(id);
+                if (file != null && file.ContentLength > 0)
                 {
-                    FileInfo file1 = new FileInfo(path1 + file_name);
-                    if (file1.Exists)
+
+                    string pic = "";
+                    string file_name = book.Img;
+                    string path1 = Server.MapPath("~/assets/img/");
+                    string checkimg = Path.GetExtension(file.FileName);
+                    if (checkimg.ToLower() == ".jpg" || checkimg.ToLower() == ".jpeg" || checkimg.ToLower() == ".png")
                     {
-                        file1.Delete();
+                        FileInfo file1 = new FileInfo(path1 + file_name);
+                        if (file1.Exists)
+                        {
+                            file1.Delete();
+                        }
+                        pic = System.IO.Path.GetFileName(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/assets/img/"), Path.GetFileName(file.FileName));
+                        file.SaveAs(path);
+                        rebook.Img = pic.ToString();
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
                     }
-                    pic = System.IO.Path.GetFileName(file.FileName);
-                    string path = Path.Combine(Server.MapPath("~/assets/img/"), Path.GetFileName(file.FileName));
-                    file.SaveAs(path);
-                    rebook.Img = pic.ToString();
-                     if (ModelState.IsValid)
-            {
-                rebook.BookName = book.BookName;
-                rebook.Quantity = book.Quantity;
-                rebook.Price = book.Price;
-                rebook.Description = book.Description;
-                rebook.Cat_ID = book.Cat_ID;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                    else
+                    {
+                        ViewBag.CheckError = "*Invavlid file";
+                    }
                 }
                 else
                 {
-                    ViewBag.CheckError = "*Invavlid file";
+                    rebook.BookName = book.BookName;
+                    rebook.Quantity = book.Quantity;
+                    rebook.Price = book.Price;
+                    rebook.Description = book.Description;
+                    rebook.Cat_ID = book.Cat_ID;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
                 }
+
             }
-           
             ViewBag.Cat_ID = new SelectList(db.Categories, "Cat_ID", "CatName", book.Cat_ID);
             return View(book);
         }
