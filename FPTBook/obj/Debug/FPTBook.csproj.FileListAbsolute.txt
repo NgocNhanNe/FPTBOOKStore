@@ -82,3 +82,4 @@ D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.dll
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.pdb
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.Migrations.AddFirstRun.resources
 D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.csproj.GenerateResource.cache
+D:\1670-App Deve\PROJECT_ASSM2\FPTBook\FPTBook\obj\Debug\FPTBook.csproj.AssemblyReference.cache
