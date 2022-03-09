@@ -17,7 +17,7 @@ namespace FPTBook.Models
         [Required(ErrorMessage = "Enter Book Name,please!")]
         public string BookName { get; set; }
         [Required(ErrorMessage = "Enter Quantity ,please!")]
-        [Range(1, 1000)]
+        [Range(0, 1000)]
         public int Quantity { get; set; }
         [Required(ErrorMessage = "Enter Price,please!")]
         [Range(1,1000)]
@@ -25,7 +25,6 @@ namespace FPTBook.Models
         [StringLength(500)]
         public string Description { get; set; }
         [DataType(DataType.Upload)]
-        [Required(ErrorMessage = "Please choose file to upload.")]
         public string Img { get; set; }
         public int Cat_ID { get; set; }
         public virtual Category Category { get; set; }

@@ -24,7 +24,6 @@ namespace FPTBook.Controllers
                 var totalCate = _db.Categories.Count();
                 var totalUser = _db.Users.Count();
                 var totalOrder = _db.Orders.Count();
-                
 
                 ViewBag.TotalBook = totalBook;
                 ViewBag.TotalCate = totalCate;

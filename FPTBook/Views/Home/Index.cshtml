@@ -22,7 +22,9 @@
             <div class="row">
                 @foreach (var item in Model)
                 {
-                    <div class="col-sm-6 col-md-4 portfolio-item">
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    @if (item.Quantity != 0)
+                    {
                         <a class="portfolio-link" href="@Url.Action("AddtoCart","MyCart1", new { id=item.Book_ID})">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
@@ -35,7 +37,21 @@
                             <h5 class="text-muted">$ @item.Price</h5>
                             <a class="btn btn-outline-primary " href="@Url.Action("Details","Books", new {id = item.Book_ID})" data-abc="true">View Products</a>
                         </div>
-                    </div>
+                    }
+                    else
+                    {
+                        <a class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <p style="color:red; font-weight:bold; font-size:50px">Out of stock</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" style="width:400px; height:450px" src="~/assets/img/@item.Img">
+                        </a>
+                        
+                    }
+
+                </div>
                 }
             </div>
         </div>

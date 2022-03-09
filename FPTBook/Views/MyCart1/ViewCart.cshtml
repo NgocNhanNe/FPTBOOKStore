@@ -3,8 +3,8 @@
     ViewBag.Title = "ViewCart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>ViewCart</h2>
+<br />
+<br />
 <br />
 <br />
 <br />
@@ -44,17 +44,17 @@
                                         {
                                             <td>
                                                 <input type="hidden" value="@item._cart_book.Book_ID" name="Book_ID" />
-                                                <input type="number" style="width: 70px;background-color:white" value="@item._cart_quantity" name="Quantity" min="1" />
-                                                <button type="submit" class="btn" style="background-color:darkorange; font-size:5px; color:black" data-abc="true">(<>)</button>
+                                                <input type="number" style="width: 100px;background-color:white" value="@item._cart_quantity" name="Quantity" min="1" />
+                                                <button type="submit" class="btn" style="background-color:darkorange; font-size:10px; color:black" data-abc="true">UPDATE</button>
 
                                             </td>
                                         }
                                         <td>
-                                           $@item._cart_book.Price
+                                            $@item._cart_book.Price
                                         </td>
 
                                         <td>
-                                           $ @total
+                                            $ @total
                                         </td>
                                         <td class="text-right d-none d-md-block">
                                             <a href="@Url.Action("Delete", "MyCart1", new { id = item._cart_book.Book_ID})" class="btn" style="background-color:darkorange; " data-abc="true">Remove</a>
@@ -71,7 +71,7 @@
                     <div class="card-body">
                         <dl class="dlist-align">
                             <dt style="margin-bottom:15px; font-size:40px">Total:</dt>
-                            <dd class="text-right ml-3" style="font-weight: bold; font-size:30px" >$ @Model.TotalPrice()</dd>
+                            <dd class="text-right ml-3" style="font-weight: bold; font-size:30px">$ @Model.TotalPrice()</dd>
                         </dl>
                         <hr>
                         <a href="@Url.Action("Index", "Home")" class="btn" style="background-color:darkorange; color:black" data-abc="true">Continue Buy </a>
@@ -106,7 +106,7 @@
                     <label class="form-label" style="font-size: 21px;color: black;font-weight: bold;">Total Price</label>
                     <input type="text" style="font-weight:bold" class="form-control" name="totalPrice" value="@Model.TotalPrice()">
                 </div>
-                
+
                 <div class="cart-footer text-right">
                     <button type="submit" style="background-color:darkorange" class="btn"><i class="start-icon"></i>Checkout</button>
                     <a href="@Url.Action("Index","Home")" class="btn btn-dark my-1">Cancel<i class="rounded-left ml-2"></i></a>
@@ -114,6 +114,8 @@
 
             }
         </div>
-</section>
+    </section>
 
 }
+
+

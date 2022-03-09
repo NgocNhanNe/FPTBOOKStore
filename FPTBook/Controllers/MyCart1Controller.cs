@@ -45,6 +45,11 @@ namespace FPTBook.Controllers
             MyCart cart = Session["Cart"] as MyCart;
             int id_book = int.Parse(form["Book_ID"]);
             int quantity = int.Parse(form["Quantity"]);
+            Book stock = _db.Books.FirstOrDefault(a => a.Book_ID == id_book);
+            if (quantity > stock.Quantity)
+            {
+                return Content("<script>alert('Number of books are larger than number of books in stock');window.location.replace('/MyCart1/ViewCart');</script>");
+            }
             cart.Update_Quantity_Book(id_book, quantity);
             return RedirectToAction("ViewCart", "MyCart1");
         }
@@ -52,7 +57,9 @@ namespace FPTBook.Controllers
         public ActionResult ViewCart()
         {
             if (Session["Cart"] == null)
-                return RedirectToAction("ViewCart", "MyCart1");
+            {
+                return Content("<script>alert('Cart is empty!');window.location.replace('/');</script>");
+            }
             MyCart cart = Session["Cart"] as MyCart;
             return View(cart);
 
@@ -86,27 +93,34 @@ namespace FPTBook.Controllers
                 _order.Address_Delivery = form["Address_Delivery"];
                 _order.Phone_Delivery = int.Parse(form["Phone_Delivery"]);
                 _order.totalPrice = int.Parse(form["totalPrice"]);
-                _db.Orders.Add(_order);
-
-                foreach (var item in cart.Items)
+                if (_order.totalPrice != 0)
                 {
-                    OrderDetail orderDetail = new OrderDetail();
-                    orderDetail.Order_ID = _order.Order_ID;
-                    orderDetail.Book_ID = item._cart_book.Book_ID;
-                    orderDetail.Quantity = item._cart_quantity;
-                    orderDetail.Amount = item._cart_book.Price * item._cart_quantity;
+                    _db.Orders.Add(_order);
 
-                    var book = _db.Books.SingleOrDefault(s => s.Book_ID == orderDetail.Book_ID);
+                    foreach (var item in cart.Items)
+                    {
+                        OrderDetail orderDetail = new OrderDetail();
+                        orderDetail.Order_ID = _order.Order_ID;
+                        orderDetail.Book_ID = item._cart_book.Book_ID;
+                        orderDetail.Quantity = item._cart_quantity;
+                        orderDetail.Amount = item._cart_book.Price * item._cart_quantity;
 
-                    book.Quantity -= orderDetail.Quantity;
-                    _db.Books.Attach(book);
-                    _db.Entry(book).Property(a => a.Quantity).IsModified = true;
+                        var book = _db.Books.SingleOrDefault(s => s.Book_ID == orderDetail.Book_ID);
 
-                    _db.OrderDetails.Add(orderDetail);
+                        book.Quantity -= orderDetail.Quantity;
+                        _db.Books.Attach(book);
+                        _db.Entry(book).Property(a => a.Quantity).IsModified = true;
+
+                        _db.OrderDetails.Add(orderDetail);
+                    }
+                    _db.SaveChanges();
+                    cart.ClearCart();
+                    return RedirectToAction("Checkout_Success", "MyCart1", new { id = _order.Order_ID });
                 }
-                _db.SaveChanges();
-                cart.ClearCart();
-                return RedirectToAction("Checkout_Success", "MyCart1", new { id = _order.Order_ID });
+                else
+                {
+                    return Content("<script>alert('Please, choose product ');window.location.replace('/MyCart1/ViewCart');</script>");
+                }
             }
             catch
             {
@@ -131,6 +145,6 @@ namespace FPTBook.Controllers
             return View("ErrorCart");
         }
 
-       
+
     }
 }

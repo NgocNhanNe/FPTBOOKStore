@@ -50,19 +50,23 @@ namespace FPTBook.Controllers
         public ActionResult Create([Bind(Include = "Book_ID,BookName,Quantity,Img,Price,Description,Cat_ID")] Book book, HttpPostedFileBase file)
         {
             string pic = System.IO.Path.GetFileName(file.FileName);
-            if (file != null)
+            string checkImg = Path.GetExtension(file.FileName);
+            if (checkImg.ToLower() == ".jpg" || checkImg.ToLower() == ".jpeg" || checkImg.ToLower() == ".png" && file != null && file.ContentLength>0)
             {
                 string path = Path.Combine(Server.MapPath("~/assets/img"), Path.GetFileName(file.FileName));
                 file.SaveAs(path);
                 book.Img = pic.ToString();
+                if (ModelState.IsValid)
+                {
+                    db.Books.Add(book);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-            if (true)
+            else
             {
-                db.Books.Add(book);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.CheckError = "*Invavlid file";
             }
-
             ViewBag.Cat_ID = new SelectList(db.Categories, "Cat_ID", "CatName", book.Cat_ID);
             return View(book);
         }
@@ -89,21 +93,23 @@ namespace FPTBook.Controllers
         {
             Book rebook = db.Books.Find(id);
             string pic = "";
-            if (file != null)
+            if (file != null && file.ContentLength > 0)
             {
                 string file_name = book.Img;
                 string path1 = Server.MapPath("~/assets/img/");
-                FileInfo file1 = new FileInfo(path1 + file_name);
-                if (file1.Exists)
+                string checkimg = Path.GetExtension(file.FileName);
+                if (checkimg.ToLower() == ".jpg" || checkimg.ToLower() == ".jpeg" || checkimg.ToLower() == ".png")
                 {
-                    file1.Delete();
-                }
-                pic = System.IO.Path.GetFileName(file.FileName);
-                string path = Path.Combine(Server.MapPath("~/assets/img/"), Path.GetFileName(file.FileName));
-                file.SaveAs(path);
-                rebook.Img = pic.ToString();
-            }
-            if (ModelState.IsValid)
+                    FileInfo file1 = new FileInfo(path1 + file_name);
+                    if (file1.Exists)
+                    {
+                        file1.Delete();
+                    }
+                    pic = System.IO.Path.GetFileName(file.FileName);
+                    string path = Path.Combine(Server.MapPath("~/assets/img/"), Path.GetFileName(file.FileName));
+                    file.SaveAs(path);
+                    rebook.Img = pic.ToString();
+                     if (ModelState.IsValid)
             {
                 rebook.BookName = book.BookName;
                 rebook.Quantity = book.Quantity;
@@ -113,6 +119,13 @@ namespace FPTBook.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+                }
+                else
+                {
+                    ViewBag.CheckError = "*Invavlid file";
+                }
+            }
+           
             ViewBag.Cat_ID = new SelectList(db.Categories, "Cat_ID", "CatName", book.Cat_ID);
             return View(book);
         }
