@@ -10,6 +10,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Order_ID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.User.FullName)
         </th>
 
@@ -31,6 +34,9 @@
 @foreach (var item in Model) {
 <tr>
     <td>
+        @Html.DisplayFor(modelItem => item.Order_ID)
+    </td>
+    <td>
         @Html.DisplayFor(modelItem => item.User.FullName)
     </td>
     <td>
@@ -46,7 +52,7 @@
         @Html.DisplayFor(modelItem => item.Order_Date)
     </td>
     <td>
-        @Html.ActionLink(" ", "Delete", new { id = item.Order_ID }, new { @class = "fas fa-trash" , @style = "color:darkorange" })
+        @Html.ActionLink(" ", "Delete", new { id = item.Order_ID }, new { @class = "fas fa-trash", @style = "color:darkorange" })
     </td>
 
 </tr>
