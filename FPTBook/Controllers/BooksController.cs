@@ -96,7 +96,6 @@ namespace FPTBook.Controllers
                 Book rebook = db.Books.Find(id);
                 if (file != null && file.ContentLength > 0)
                 {
-
                     string pic = "";
                     string file_name = book.Img;
                     string path1 = Server.MapPath("~/assets/img/");
