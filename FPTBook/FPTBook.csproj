@@ -140,9 +140,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203090906346_AddFirstRun.cs" />
-    <Compile Include="Migrations\202203090906346_AddFirstRun.Designer.cs">
-      <DependentUpon>202203090906346_AddFirstRun.cs</DependentUpon>
+    <Compile Include="Migrations\202203101817519_FirstRun.cs" />
+    <Compile Include="Migrations\202203101817519_FirstRun.Designer.cs">
+      <DependentUpon>202203101817519_FirstRun.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -299,6 +299,7 @@
     <Content Include="Views\MyCart1\ViewCart.cshtml" />
     <Content Include="Views\MyCart1\NumberCart.cshtml" />
     <Content Include="Views\MyCart1\Checkout_Success.cshtml" />
+    <Content Include="Views\User\ChangePass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,8 +318,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203090906346_AddFirstRun.resx">
-      <DependentUpon>202203090906346_AddFirstRun.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203101817519_FirstRun.resx">
+      <DependentUpon>202203101817519_FirstRun.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

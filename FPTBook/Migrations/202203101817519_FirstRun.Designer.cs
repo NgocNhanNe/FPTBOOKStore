@@ -7,13 +7,13 @@ namespace FPTBook.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddFirstRun : IMigrationMetadata
+    public sealed partial class FirstRun : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFirstRun));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FirstRun));
         
         string IMigrationMetadata.Id
         {
-            get { return "202203090906346_AddFirstRun"; }
+            get { return "202203101817519_FirstRun"; }
         }
         
         string IMigrationMetadata.Source

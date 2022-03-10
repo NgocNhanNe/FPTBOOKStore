@@ -110,11 +110,11 @@ namespace FPTBook.Controllers
             if (ModelState.IsValid)
             {
                 User tmp = _db.Users.ToList().Find(x => x.UserName == obj.UserName);
-                if (tmp.Password != obj.Password)  //if find out the customer
-                {
-                    tmp.Password = GetMD5(obj.Password);
-                    tmp.ConfirmPassword = GetMD5(obj.ConfirmPassword);
-                }
+                //if (tmp.Password != obj.Password)  //if find out the customer
+                //{
+                //    tmp.Password = GetMD5(obj.Password);
+                //    tmp.ConfirmPassword = GetMD5(obj.ConfirmPassword);
+                //}
                 tmp.UserName = obj.UserName;
                 tmp.FullName = obj.FullName;
                 tmp.Telephone = obj.Telephone;
@@ -128,6 +128,47 @@ namespace FPTBook.Controllers
             }
             return View("EditInFor");
         }
+
+        public ActionResult ChangePass()
+        {
+            var user = Session["UserName"];
+            if (user == null)
+            {
+                Response.Write("<script>alert('Please sign in to continue!'); window.location='/User/Login'</script>");
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePass(User _user)
+        {
+            var user = Session["UserName"];
+
+            User objAccount = _db.Users.ToList().Find(p => p.UserName.Equals(user) && p.Password.Equals(GetMD5(_user.CurrentPassword)));
+            if (objAccount == null)
+            {
+                ViewBag.Error = "Current Password is incorrect";
+                return View();
+            }
+            if (_user.NewPassword != _user.ConfirmNewPassword)
+            {
+                ViewBag.Confirm = "The new password and confirmation new password do not match.";
+            }
+
+            else
+            {
+                objAccount.Password = GetMD5(_user.NewPassword);
+                objAccount.ConfirmPassword = objAccount.Password;
+                _db.Users.Attach(objAccount);
+                _db.Entry(objAccount).Property(a => a.Password).IsModified = true;
+                _db.SaveChanges();
+
+                ViewBag.Success = "Password Change successfully";
+            }
+            return View();
+        }
+
         //Logout
         public ActionResult Logout()
         {

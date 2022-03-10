@@ -48,24 +48,24 @@
                             <button type="submit" class="btn" style="background-color:darkorange; height:36px" value="Search">Search</button>
                         </div>
                     </div>
-                     
-                     
-                 }
+
+
+                }
                 <div class="collapse navbar-collapse" id="navbarResponsive" style="margin: 4px;margin-left: -42px;font-size: 17px;padding: -20px;margin-bottom: 0px;margin-right: -112px;">
                     @if (Session["UserName"] != null)
                     {
-                    <ul class="navbar-nav ms-auto text-uppercase">
-                        <li class="nav-item"><a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</li>
-                        <li class="nav-item"><a class="nav-link" @Html.ActionLink("About", "About", "Home")</li>
-                        <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li class="nav-item"><a class="nav-link" @Html.ActionLink($"Hi!{Session["UserName"]}", "EditInfor", "User")</li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("ViewCart","MyCart1")">
-                                <i class="fa fa-opencart" style="font-size:20px">@Html.Action("NumberCart", "MyCart1")</i>
-                            </a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","User")">LOG OUT</a></li>
-                    </ul>
+                        <ul class="navbar-nav ms-auto text-uppercase">
+                            <li class="nav-item"><a class="nav-link" @Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="nav-item"><a class="nav-link" @Html.ActionLink("About", "About", "Home")</li>
+                            <li class="nav-item"><a class="nav-link" @Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li class="nav-item"><a class="nav-link" @Html.ActionLink($"Hi!{Session["UserName"]}", "EditInfor", "User")</li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("ViewCart","MyCart1")">
+                                    <i class="fa fa-opencart" style="font-size:20px">@Html.Action("NumberCart", "MyCart1")</i>
+                                </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","User")">LOG OUT</a></li>
+                        </ul>
                     }
                     else
                     {
