@@ -6,91 +6,78 @@
 }
 
 <h2>Delete User</h2>
-
 <h3>Are you sure you want to delete this?</h3>
 <div>
+
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ConfirmPassword)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ConfirmPassword)
-        </dd>
-
+        <br />
         <dt>
             @Html.DisplayNameFor(model => model.FullName)
         </dt>
-
+        <hr />
         <dd>
             @Html.DisplayFor(model => model.FullName)
         </dd>
-
+        <hr />
         <dt>
             @Html.DisplayNameFor(model => model.Email)
         </dt>
-
+        <hr />
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
-
+        <hr />
         <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
-
+        <hr />
         <dd>
             @Html.DisplayFor(model => model.Address)
         </dd>
-
+        <hr />
         <dt>
             @Html.DisplayNameFor(model => model.Telephone)
         </dt>
-
+        <hr />
         <dd>
             @Html.DisplayFor(model => model.Telephone)
         </dd>
-
+        <hr />
         <dt>
             @Html.DisplayNameFor(model => model.Birthday)
         </dt>
-
+        <hr />
         <dd>
             @Html.DisplayFor(model => model.Birthday)
         </dd>
-
+        <hr />
         <dt>
             @Html.DisplayNameFor(model => model.Gender)
         </dt>
-
+        <hr />
         <dd>
             @Html.DisplayFor(model => model.Gender)
         </dd>
-
+        <hr />
         <dt>
             @Html.DisplayNameFor(model => model.state)
         </dt>
-
+        <hr />
         <dd>
             @Html.DisplayFor(model => model.state)
         </dd>
-
+        <hr />
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-<div class="form-actions no-color">
-    <div class="mb-3"><button class="btn btn-primary d-block w-25" type="submit" style="color: var(--bs-gray-800); background: var(--bs-orange); ">Delete</button></div>
-    <div class="mb-3"><a class="btn btn-primary d-block w-25" href="@Url.Action("Index","Admin")" style="color: var(--bs-orange); background: var(--bs-gray-800); ">Cancel</a></div>
+        <div class="form-actions no-color">
+            <div class="mb-3"><button class="btn btn-primary d-block w-25" type="submit" style="color: var(--bs-gray-800); background: var(--bs-orange); ">Delete</button></div>
+            <div class="mb-3"><a class="btn btn-primary d-block w-25" href="@Url.Action("Index","Admin")" style="color: var(--bs-orange); background: var(--bs-gray-800); ">Cancel</a></div>
 
-</div>
+        </div>
     }
+
 </div>
