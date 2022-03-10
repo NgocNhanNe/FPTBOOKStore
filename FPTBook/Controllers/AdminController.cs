@@ -33,17 +33,7 @@ namespace FPTBook.Controllers
             }
             return RedirectToAction("Error");
         }
-        [HttpPost]
-        public ActionResult Index(string searchstring)
-        {
-            List<Book> data = new List<Book>();
-            data = _db.Books.Where(x => x.BookName.Contains(searchstring)).ToList();
-            if (data == null)
-            {
-                return RedirectToAction("Index");
-            }
-            return View(data);
-        }
+
         public ActionResult Error()
         {
            return View();
