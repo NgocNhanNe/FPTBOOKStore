@@ -110,11 +110,6 @@ namespace FPTBook.Controllers
             if (ModelState.IsValid)
             {
                 User tmp = _db.Users.ToList().Find(x => x.UserName == obj.UserName);
-                //if (tmp.Password != obj.Password)  //if find out the customer
-                //{
-                //    tmp.Password = GetMD5(obj.Password);
-                //    tmp.ConfirmPassword = GetMD5(obj.ConfirmPassword);
-                //}
                 tmp.UserName = obj.UserName;
                 tmp.FullName = obj.FullName;
                 tmp.Telephone = obj.Telephone;
