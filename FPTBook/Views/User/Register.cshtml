@@ -26,13 +26,13 @@
             <div class="form-group mb-3">
                 <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: var(--bs-body-bg);">
                     <strong>Password</strong><br>
-                </label><input class="form-control" type="password" id="password" style="margin-bottom: 20px;" placeholder="Enter Password" @Html.EditorFor(model => model.Password)
+                </label><input class="form-control" type="password" id="password" style="margin-bottom: 20px;" required="" placeholder="Enter Password" @Html.EditorFor(model => model.Password)
                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
             <div class="form-group mb-3">
                 <label class="form-label" style="margin-bottom: 10px;margin-top: 10px;color: var(--bs-body-bg);">
                     <strong>Confirm Password</strong>
-                </label><input class="form-control" type="password" id="password" placeholder="Enter Password again" style="margin-bottom: 20px;" @Html.EditorFor(model => model.ConfirmPassword)
+                </label><input class="form-control" type="password" id="password" placeholder="Enter Password again" required="" style="margin-bottom: 20px;" @Html.EditorFor(model => model.ConfirmPassword)
                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
             </div>
             <div class="form-group mb-3">
